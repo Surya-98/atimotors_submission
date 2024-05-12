@@ -24,7 +24,7 @@ Note the dataset is already prepared and saved in Market/pytorch
 
 ## Question 1 & 2
 
-No quatization with GPU (Solution for question 1)
+No quatization with GPU **(Solution for question 1)**
 ```
 python3 run_model.py --quantization None -–gpu
 ```
@@ -32,7 +32,7 @@ No quantization with CPU
 ```
 python3 run_model.py --quantization None -–no-gpu
 ```
-Static quantization to int 8 (Solution for question 2)
+Static quantization to int 8 **(Solution for question 2)**
 ```
 python3 run_model.py --quantization int8
 ```
@@ -41,7 +41,7 @@ Dynamic quantization to fp16
 python3 run_model.py --quantization fp16
 ```
 
-The extracted features are saved in output_mat/\
+The extracted features are saved in output_mat/
 
 ### Results:
 int8 can be run in CPU and gives a ~1.6x speed up, ~3.5x decrease in model size with ~4% drop in MAP
@@ -53,7 +53,7 @@ int8 can be run in CPU and gives a ~1.6x speed up, ~3.5x decrease in model size 
 >ft_net_dense\
 >tee: ./model_int8/ft_net_dense/result.txt: No such file or directory\
 >torch.Size([3368, 512])\
->Rank@1:0.901722 Rank@5:0.962292 Rank@10:0.974762 mAP:0.740243\
+>Rank@1:0.901722 Rank@5:0.962292 Rank@10:0.974762 mAP:0.740243
 
 --------- CPU-----------
 >19732it [21:03, 15.61it/s]\
@@ -61,7 +61,7 @@ int8 can be run in CPU and gives a ~1.6x speed up, ~3.5x decrease in model size 
 >Training complete in 24m 38.20s\
 >ft_net_dense\
 >torch.Size([3368, 512])\
->Rank@1:0.901722 Rank@5:0.962292 Rank@10:0.974762 mAP:0.740243\
+>Rank@1:0.901722 Rank@5:0.962292 Rank@10:0.974762 mAP:0.740243
 
 -------- int8 static-----------
 >Size of model before quantization\
@@ -73,7 +73,7 @@ int8 can be run in CPU and gives a ~1.6x speed up, ~3.5x decrease in model size 
 >Training complete in 15m 33.80s\
 >ft_net_dense\
 >torch.Size([3368, 512])\
->Rank@1:0.887173 Rank@5:0.957838 Rank@10:0.972090 mAP:0.712144 \
+>Rank@1:0.887173 Rank@5:0.957838 Rank@10:0.972090 mAP:0.712144
 
 -------Tried fp16 dynamic -----------
 >Size of model before quantization\
@@ -86,16 +86,16 @@ int8 can be run in CPU and gives a ~1.6x speed up, ~3.5x decrease in model size 
 >Training complete in 24m 0.81s\
 >ft_net_dense\
 >torch.Size([3368, 512])\
->Rank@1:0.901425 Rank@5:0.962292 Rank@10:0.974762 mAP:0.740222\
+>Rank@1:0.901425 Rank@5:0.962292 Rank@10:0.974762 mAP:0.740222
 
 ## Question 3
 The answer is in question_3_answer.py\
-The code used to test the code is in question_3_test.py if needed\
+The code used to test the code is in question_3_test.py if needed
 
 ## References:
-- https://github.com/layumi/Person_reID_baseline_pytorch.git\
-- https://pytorch.org/docs/stable/quantization.html\
-- Dataset - https://www.kaggle.com/datasets/sachinsarkar/market1501?resource=download\
+- https://github.com/layumi/Person_reID_baseline_pytorch.git
+- https://pytorch.org/docs/stable/quantization.html
+- Dataset - https://www.kaggle.com/datasets/sachinsarkar/market1501?resource=download
 
 
 
